@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ajay Sharma | IIM Indore</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1a1612;
+      --ink-light: #4a4035;
+      --ink-faint: #8a7e72;
+      --paper: #f9f6f0;
+      --paper-mid: #f0ebe1;
+      --paper-dark: #e3dcd0;
+      --rule: #c8bfb0;
+      --accent: #8b3a2a;
+      --accent-soft: #b5543f;
+      --link: #3a5a8b;
+      --link-hover: #8b3a2a;
+      --gold: #b08d40;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 17px; scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Source Serif 4', Georgia, serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 0;
+    }
+
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 2rem 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .header-name {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+      color: var(--paper);
+    }
+
+    .header-name span {
+      display: block;
+      font-size: 1rem;
+      font-family: 'Source Serif 4', serif;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--rule);
+      margin-top: 0.5rem;
+      letter-spacing: 0.04em;
+    }
+
+    .header-affil {
+      text-align: right;
+      font-size: 0.85rem;
+      color: var(--paper-dark);
+      line-height: 1.8;
+      font-family: 'DM Mono', monospace;
+      font-weight: 400;
+    }
+
+    .header-affil a {
+      color: var(--paper-dark);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      transition: color 0.2s;
+    }
+    .header-affil a:hover { color: var(--paper); }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--accent);
+    }
+    nav ul {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      gap: 0;
+      list-style: none;
+    }
+    nav ul li a {
+      display: block;
+      padding: 0.7rem 1.1rem;
+      color: var(--paper);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-family: 'DM Mono', monospace;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: background 0.2s;
+    }
+    nav ul li a:hover { background: rgba(255,255,255,0.15); }
+
+    /* ── LAYOUT ── */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+
+    section {
+      padding: 3rem 0 2rem;
+      border-bottom: 1px solid var(--paper-dark);
+    }
+    section:last-child { border-bottom: none; }
+
+    h2 {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.03em;
+      margin-bottom: 1.4rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--paper-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    h2::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 1.1em;
+      background: var(--accent);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    h3 {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.25rem;
+    }
+
+    p { margin-bottom: 0.9rem; color: var(--ink-light); }
+    p:last-child { margin-bottom: 0; }
+
+    a { color: var(--link); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.2s, border-color 0.2s; }
+    a:hover { color: var(--link-hover); border-color: var(--link-hover); }
+
+    /* ── BIO SECTION ── */
+    .bio-grid {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .bio-photo-placeholder {
+      background: var(--paper-dark);
+      border: 1px solid var(--rule);
+      aspect-ratio: 3/4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink-faint);
+      font-size: 0.75rem;
+      font-family: 'DM Mono', monospace;
+      text-align: center;
+      gap: 0.5rem;
+      border-radius: 2px;
+    }
+    .bio-photo-placeholder svg { opacity: 0.35; }
+
+    .contact-block {
+      margin-top: 1.5rem;
+      padding: 1rem 1.2rem;
+      background: var(--paper-mid);
+      border-left: 3px solid var(--gold);
+      font-size: 0.82rem;
+      font-family: 'DM Mono', monospace;
+      line-height: 2;
+      color: var(--ink-light);
+    }
+    .contact-block a { font-family: 'DM Mono', monospace; font-size: 0.82rem; }
+
+    /* ── RESEARCH INTERESTS ── */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .tag {
+      background: var(--paper-mid);
+      border: 1px solid var(--rule);
+      padding: 0.25rem 0.7rem;
+      font-size: 0.78rem;
+      font-family: 'DM Mono', monospace;
+      color: var(--ink-light);
+      border-radius: 2px;
+    }
+
+    /* ── PUBLICATIONS ── */
+    .pub-list { list-style: none; }
+    .pub-list li {
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--paper-dark);
+    }
+    .pub-list li:last-child { border-bottom: none; }
+
+    .pub-title {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--ink);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .pub-meta {
+      font-size: 0.82rem;
+      font-family: 'DM Mono', monospace;
+      color: var(--ink-faint);
+      line-height: 1.6;
+    }
+    .pub-meta .journal { color: var(--accent-soft); font-weight: 500; }
+    .pub-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      font-size: 0.68rem;
+      font-family: 'DM Mono', monospace;
+      padding: 0.1rem 0.45rem;
+      border-radius: 2px;
+      vertical-align: middle;
+      margin-left: 0.4rem;
+      letter-spacing: 0.05em;
+    }
+    .pub-badge.wp { background: var(--gold); }
+
+    /* ── WORKING PAPERS ── */
+    .wp-list { list-style: none; }
+    .wp-list li {
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--paper-dark);
+    }
+    .wp-list li:last-child { border-bottom: none; }
+    .wp-status {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-family: 'DM Mono', monospace;
+      color: var(--ink-faint);
+      border: 1px solid var(--rule);
+      padding: 0.1rem 0.5rem;
+      border-radius: 2px;
+      margin-top: 0.3rem;
+    }
+
+    /* ── TEACHING ── */
+    .teaching-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .course-card {
+      background: var(--paper-mid);
+      border: 1px solid var(--paper-dark);
+      border-top: 3px solid var(--accent);
+      padding: 1rem 1.2rem;
+    }
+    .course-card h3 { font-size: 0.95rem; margin-bottom: 0.3rem; }
+    .course-card .level {
+      font-size: 0.75rem;
+      font-family: 'DM Mono', monospace;
+      color: var(--ink-faint);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── CV ── */
+    .cv-section { margin-bottom: 1.8rem; }
+    .cv-section h3 {
+      font-size: 0.8rem;
+      font-family: 'DM Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ink-faint);
+      margin-bottom: 0.7rem;
+    }
+    .cv-row {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 1rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.92rem;
+    }
+    .cv-row .year {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--ink-faint);
+      padding-top: 0.1rem;
+    }
+    .cv-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--accent);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      margin-top: 1rem;
+      transition: background 0.2s;
+    }
+    .cv-download:hover { background: var(--accent-soft); border-color: transparent; color: white; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      color: var(--ink-faint);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.78rem;
+      font-family: 'DM Mono', monospace;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 680px) {
+      .header-inner { grid-template-columns: 1fr; }
+      .header-affil { text-align: left; }
+      .bio-grid { grid-template-columns: 1fr; }
+      .bio-photo-placeholder { max-width: 200px; }
+      .teaching-grid { grid-template-columns: 1fr; }
+      .cv-row { grid-template-columns: 90px 1fr; }
+      nav ul { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div>
+      <div class="header-name">
+        Ajay Sharma
+        <span>Professor of Economics</span>
+      </div>
+    </div>
+    <div class="header-affil">
+      Indian Institute of Management Indore<br>
+      Indore, Madhya Pradesh, India<br>
+      <a href="mailto:ajay@iimidr.ac.in">ajay@iimidr.ac.in</a>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#bio">About</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#working-papers">Working Papers</a></li>
+    <li><a href="#teaching">Teaching</a></li>
+    <li><a href="#cv">CV</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- BIO -->
+  <section id="bio">
+    <h2>About</h2>
+    <div class="bio-grid">
+      <div>
+        <p>
+          I am a Professor of Economics at the <strong>Indian Institute of Management Indore</strong>, where I have been based since 2015. My research lies at the intersection of labour economics, development economics, urban and spatial economics, competition policy, and industrial organisation.
+        </p>
+        <p>
+          My work places a strong emphasis on <em>quasi-experimental causal inference</em>, applied to Indian administrative and large-scale survey data — including PLFS, NFHS, NSS, IHDS, CMIE, and SHRUG. I am particularly interested in how infrastructure, institutions, and policy interventions shape labour market outcomes, household behaviour, and market structure in developing economies.
+        </p>
+        <p>
+          I hold an active <strong>ANRF Matrics Grant</strong> focused on game-theoretic models for competition policy in Indian markets. I supervise PhD students working on competition policy, green economics, migration, and marriage markets.
+        </p>
+        <div class="contact-block">
+          📍 &nbsp;IIM Indore, Rau–Pithampur Road, Indore 453556<br>
+          ✉️ &nbsp;<a href="mailto:ajay@iimidr.ac.in">ajay@iimidr.ac.in</a><br>
+          🔗 &nbsp;<a href="https://github.com" target="_blank">GitHub</a> &nbsp;·&nbsp;
+          <a href="https://scholar.google.com" target="_blank">Google Scholar</a> &nbsp;·&nbsp;
+          <a href="https://ssrn.com" target="_blank">SSRN</a>
+        </div>
+      </div>
+      <div>
+        <div class="bio-photo-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+          <span>Photo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH INTERESTS -->
+  <section id="research">
+    <h2>Research Interests</h2>
+    <p>My research spans the following fields and themes:</p>
+    <div class="tags">
+      <span class="tag">Labour Economics</span>
+      <span class="tag">Development Economics</span>
+      <span class="tag">Urban &amp; Spatial Economics</span>
+      <span class="tag">Competition Policy</span>
+      <span class="tag">Industrial Organisation</span>
+      <span class="tag">Causal Inference</span>
+      <span class="tag">Gender Economics</span>
+      <span class="tag">Intra-household Bargaining</span>
+      <span class="tag">Migration</span>
+      <span class="tag">Rural–Urban Commuting</span>
+      <span class="tag">Infrastructure &amp; Development</span>
+      <span class="tag">PMGSY Roads</span>
+      <span class="tag">Structural Transformation</span>
+    </div>
+    <p style="margin-top:1.2rem;">
+      Methodologically, I specialise in <strong>staggered difference-in-differences</strong> (Callaway–Sant'Anna, Sun–Abraham), <strong>fuzzy and sharp RDD</strong>, <strong>instrumental variables / 2SLS</strong>, event studies, and synthetic control methods.
+    </p>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <h2>Publications</h2>
+    <ul class="pub-list">
+      <li>
+        <span class="pub-title">Green Strategies and Managerial Incentives: Evidence from Indian Firms</span>
+        <div class="pub-meta">
+          with Nitin Shahi &nbsp;·&nbsp;
+          <span class="journal">Energy Economics</span>
+          <span class="pub-badge">Published</span>
+        </div>
+      </li>
+      <li>
+        <span class="pub-title">Migration and Educational Assortative Mating: Evidence from India</span>
+        <div class="pub-meta">
+          with Minali Grover &nbsp;·&nbsp;
+          <span class="journal">Review of Economics of the Household</span>
+          <span class="pub-badge">Published</span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- WORKING PAPERS -->
+  <section id="working-papers">
+    <h2>Working Papers &amp; Projects</h2>
+    <ul class="wp-list">
+      <li>
+        <h3>Rural–Urban Commuting and Wages in India</h3>
+        <p style="margin:0.3rem 0 0.2rem; font-size:0.9rem;">Using PLFS microdata with PMGSY road construction thresholds, historical rail network density, and terrain ruggedness as instruments for 2SLS estimation with district-clustered standard errors.</p>
+        <span class="wp-status">In progress</span>
+      </li>
+      <li>
+        <h3>Civic Returns to Education in India</h3>
+        <p style="margin:0.3rem 0 0.2rem; font-size:0.9rem;">IV estimation and mediation analysis using World Values Survey Wave 7 data, implemented in Stata.</p>
+        <span class="wp-status">In progress</span>
+      </li>
+      <li>
+        <h3>Education–Occupation Mismatch and Wage Penalties</h3>
+        <p style="margin:0.3rem 0 0.2rem; font-size:0.9rem;">Using PLFS microdata. Target journals: <em>World Development</em>, <em>Social Indicators Research</em>.</p>
+        <span class="wp-status">Draft available</span>
+      </li>
+      <li>
+        <h3>AI, Software Automation, and Wages in India</h3>
+        <p style="margin:0.3rem 0 0.2rem; font-size:0.9rem;">Shift-share instruments and Lewbel IV applied to PLFS data. Target: <em>New Technology, Work and Employment</em> or <em>World Development</em>.</p>
+        <span class="wp-status">Draft available</span>
+      </li>
+      <li>
+        <h3>Maternity Benefit Amendment Act 2017 and Child Health</h3>
+        <p style="margin:0.3rem 0 0.2rem; font-size:0.9rem;">Difference-in-differences using NFHS-4/5 data.</p>
+        <span class="wp-status">In progress</span>
+      </li>
+      <li>
+        <h3>Migration and Intra-household Bargaining</h3>
+        <p style="margin:0.3rem 0 0.2rem; font-size:0.9rem;">Using Kerala Migration Survey data.</p>
+        <span class="wp-status">In progress</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- TEACHING -->
+  <section id="teaching">
+    <h2>Teaching</h2>
+    <p>I teach across MBA, Executive Education, and PhD programmes at IIM Indore. My courses combine rigorous theoretical foundations with applied empirical work on Indian and global data.</p>
+    <div class="teaching-grid">
+      <div class="course-card">
+        <div class="level">PhD / Doctoral</div>
+        <h3>Applied Development Economics</h3>
+        <p style="font-size:0.85rem; margin-top:0.4rem;">33-session course covering quasi-experimental methods in development contexts, from IV and RDD to staggered DiD and synthetic control.</p>
+      </div>
+      <div class="course-card">
+        <div class="level">MBA</div>
+        <h3>Managerial Economics</h3>
+        <p style="font-size:0.85rem; margin-top:0.4rem;">Microeconomic foundations for business decision-making, market structure, and strategic interaction.</p>
+      </div>
+      <div class="course-card">
+        <div class="level">MBA / Executive</div>
+        <h3>Competition Policy &amp; Regulation</h3>
+        <p style="font-size:0.85rem; margin-top:0.4rem;">CCI case analysis, cartel detection, vertical restraints, platform economics, and e-commerce regulation.</p>
+      </div>
+      <div class="course-card">
+        <div class="level">Executive Education</div>
+        <h3>Platform &amp; Digital Economics</h3>
+        <p style="font-size:0.85rem; margin-top:0.4rem;">Economics of platforms, two-sided markets, network effects, and digital market interventions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CV -->
+  <section id="cv">
+    <h2>Curriculum Vitae</h2>
+
+    <div class="cv-section">
+      <h3>Positions</h3>
+      <div class="cv-row">
+        <span class="year">2015 – present</span>
+        <span>Professor of Economics, Indian Institute of Management Indore</span>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <h3>Grants &amp; Funding</h3>
+      <div class="cv-row">
+        <span class="year">Active</span>
+        <span>ANRF Matrics Grant — Game-theoretic models for competition policy in Indian markets</span>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <h3>PhD Supervision</h3>
+      <div class="cv-row">
+        <span class="year">Current</span>
+        <span>Nitin Shahi — Competition policy &amp; green economics</span>
+      </div>
+      <div class="cv-row">
+        <span class="year">Current</span>
+        <span>Minali Grover — Migration &amp; marriage markets</span>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <h3>Target Journals</h3>
+      <div class="tags" style="margin-top:0;">
+        <span class="tag">Journal of Development Economics</span>
+        <span class="tag">World Development</span>
+        <span class="tag">Review of Economics of the Household</span>
+        <span class="tag">Energy Economics</span>
+        <span class="tag">Journal of Urban Economics</span>
+      </div>
+    </div>
+
+    <a href="cv.pdf" class="cv-download">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download Full CV (PDF)
+    </a>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Ajay Sharma &nbsp;·&nbsp; Indian Institute of Management Indore &nbsp;·&nbsp; Last updated April 2026
+</footer>
+
+</body>
+</html>
