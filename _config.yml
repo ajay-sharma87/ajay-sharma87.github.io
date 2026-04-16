@@ -1,0 +1,26 @@
+# ══════════════════════════════════════════
+#  SITE SETTINGS  ← Edit this file freely
+# ══════════════════════════════════════════
+
+title:       Ajay Sharma
+tagline:     Professor of Economics
+institution: Indian Institute of Management Indore
+location:    Indore, Madhya Pradesh, India
+
+# Add your email here:
+email: ""
+
+# Profile links (leave blank to hide)
+google_scholar: "https://scholar.google.co.in/citations?user=Np7htXwAAAAJ&hl=en&authuser=2"
+ideas_repec:    "https://ideas.repec.org/f/psh439.html"
+researchgate:   "https://www.researchgate.net/profile/Ajay_Sharma44"
+
+# Upload your CV as cv.pdf to the repo root, then set this to "cv.pdf"
+cv_pdf: "cv.pdf"
+
+# ── Technical settings (don't change) ──
+baseurl: ""
+url: ""
+markdown: kramdown
+plugins:
+  - jekyll-seo-tag

@@ -1,0 +1,48 @@
+# ══════════════════════════════════════════
+#  CV DATA  ← Edit this file
+# ══════════════════════════════════════════
+
+positions:
+  - years: "Jun 2025 – present"
+    title: Professor, Economics
+    institution: Indian Institute of Management, Indore
+
+  - years: "Jul 2020 – Jun 2025"
+    title: Associate Professor, Economics
+    institution: Indian Institute of Management, Indore
+
+  - years: "Jan 2015 – Jun 2020"
+    title: Assistant Professor, Economics
+    institution: Indian Institute of Management, Indore
+
+  - years: "Nov 2013 – Dec 2014"
+    title: Consultant
+    institution: IGIDR, Mumbai
+
+
+education:
+  - year: 2014
+    degree: "Ph.D., Development Studies"
+    institution: "Indira Gandhi Institute of Development Research (IGIDR), Mumbai"
+
+  - year: 2011
+    degree: "M.Phil., Development Studies"
+    institution: "Indira Gandhi Institute of Development Research (IGIDR), Mumbai"
+
+  - year: 2009
+    degree: "M.A., Economics"
+    institution: "Gokhale Institute of Politics and Economics, Pune"
+
+
+grants:
+  - years: Active
+    title: ANRF Matrics Grant
+    description: Game-theoretic models for competition policy in Indian markets
+
+
+phd_students:
+  - name: Nitin Shahi
+    topic: Competition policy and green economics
+
+  - name: Minali Grover
+    topic: Migration and marriage markets

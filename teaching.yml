@@ -1,0 +1,33 @@
+# ══════════════════════════════════════════
+#  TEACHING  ← Edit this file
+# ══════════════════════════════════════════
+
+courses:
+  - level: PhD / Doctoral
+    title: Applied Development Economics
+    description: >
+      Quasi-experimental methods applied to Indian development contexts:
+      IV, RDD, staggered DiD, and synthetic control.
+
+  - level: MBA
+    title: Microeconomics / Managerial Economics
+    description: >
+      Microeconomic foundations for business decision-making,
+      market structure, and strategic interaction.
+
+  - level: MBA / Executive
+    title: Competition Policy & Regulation
+    description: >
+      CCI cases, cartel analysis, vertical restraints, platform economics,
+      and digital market regulation.
+
+  - level: MBA / PhD
+    title: Applied Econometrics
+    description: >
+      Causal inference methods applied to Indian labour and development data.
+
+  - level: MBA
+    title: Labour Economics
+    description: >
+      Labour markets, wages, informality, human capital, and mobility
+      in the Indian context.
